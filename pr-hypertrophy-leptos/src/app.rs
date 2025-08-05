@@ -51,7 +51,7 @@ pub fn App() -> impl IntoView {
                     <img src="public/leptos.svg" class="logo leptos" alt="Leptos logo"/>
                 </a>
             </div>
-            <p>"Click on the Tauri and Leptos logos to learn more."</p>
+            <p class="subtext">"Click on the Tauri and Leptos logos to learn more."</p>
 
             <form class="row" on:submit=greet>
                 <input
