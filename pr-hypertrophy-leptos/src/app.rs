@@ -16,14 +16,33 @@ struct GreetArgs<'a> {
 
 #[component]
 pub fn SlidingList() -> impl IntoView {
-    let (order, set_order) = signal((0, 1, 2, 3));
+    let (order, set_order) = signal(vec![0, 1, 2, 3]);
+    let (current, set_current) = signal((-1isize, -1isize));
 
     view! {
         <div class="sliding-list">
-            <div class="sliding-list__item">{ move || order.get().0 }</div>
-            <div class="sliding-list__item">{ move || order.get().1 }</div>
-            <div class="sliding-list__item">{ move || order.get().2 }</div>
-            <div class="sliding-list__item">{ move || order.get().3 }</div>
+        {
+            order.get().into_iter().enumerate().map(|(index,item)|
+
+            view! {
+                <div class="sliding-list__item"
+                on:click=move |_| {
+                    println!("{} {}", index, item);
+                    if current.get() == (-1isize, -1isize) {
+                        set_current.set((index as isize, item as isize));
+                    } else {
+                        if current.get().1 != item as isize {
+                            let mut new_order = order.get().to_vec();
+                            new_order.swap(current.get().0 as usize, index);
+                        }
+
+                        set_current.set((-1isize, -1isize));
+                    }}>{format!("{}:Item {} {}", index, item, current.get().1 != item as isize)}</div>
+
+            }
+            ).collect::<Vec<_>>()
+        }
+        {format!("Current: {} {}, {}", current.get().0, current.get().1, current.get() == (-1isize, -1isize))}
         </div>
     }
 }
