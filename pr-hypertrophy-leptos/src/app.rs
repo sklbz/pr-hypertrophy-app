@@ -15,6 +15,20 @@ struct GreetArgs<'a> {
 }
 
 #[component]
+pub fn SlidingList() -> impl IntoView {
+    let (order, set_order) = signal((0, 1, 2, 3));
+
+    view! {
+        <div class="sliding-list">
+            <div class="sliding-list__item">{ move || order.get().0 }</div>
+            <div class="sliding-list__item">{ move || order.get().1 }</div>
+            <div class="sliding-list__item">{ move || order.get().2 }</div>
+            <div class="sliding-list__item">{ move || order.get().3 }</div>
+        </div>
+    }
+}
+
+#[component]
 pub fn App() -> impl IntoView {
     let (name, set_name) = signal(String::new());
     let (greet_msg, set_greet_msg) = signal(String::new());
@@ -62,6 +76,8 @@ pub fn App() -> impl IntoView {
                 <button type="submit">"Greet"</button>
             </form>
             <p>{ move || greet_msg.get() }</p>
+
+            <SlidingList/>
         </main>
     }
 }
