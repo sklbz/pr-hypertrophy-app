@@ -47,12 +47,12 @@ pub fn SlidingList() -> impl IntoView {
                 <button class="sliding-list__item"
                 // style=format!("background-color: {}", color.get()[item])
                 on:click=move |_| clicky_click(index, item)
-                    >{format!("{}:Item {} {}", index, item, current.get().1 != item as isize)}</button>
+                    >{format!("{}:Item {}", index, item)}</button>
 
             }
             ).collect::<Vec<_>>()
         }
-        {move || format!("Current: {} {}, {}", current.get().0, current.get().1, current.get() == (-1isize, -1isize))}
+        // {move || format!("Current: {} {}, {}", current.get().0, current.get().1, current.get() == (-1isize, -1isize))}
         </div>
     }
 }
