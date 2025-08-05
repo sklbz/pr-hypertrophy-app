@@ -20,35 +20,39 @@ pub fn SlidingList() -> impl IntoView {
     let (color, set_color) = signal(vec!["black", "black", "black", "black"]);
     let (current, set_current) = signal((-1isize, -1isize));
 
+    let clicky_click = move |index: usize, item: usize| {
+        let mut new_clr = color.get().to_vec();
+        new_clr[item] = "red";
+        set_color.set(new_clr);
+
+        if current.get() == (-1isize, -1isize) {
+            set_current.set((index as isize, item as isize));
+        } else {
+            if current.get().1 != item as isize {
+                let mut new_order = order.get().to_vec();
+                new_order.swap(current.get().0 as usize, index);
+                set_order.set(new_order);
+            }
+
+            set_current.set((-1isize, -1isize));
+        }
+    };
+
     view! {
         <div class="sliding-list">
         {
-            order.get().into_iter().enumerate().map(|(index,item)|
+            move || order.get().into_iter().enumerate().map(|(index,item)|
 
             view! {
-                <div class="sliding-list__item"
-                style=format!("background-color: {}", color.get()[item])
-                on:click=move |_| {
-                    let mut new_clr = color.get().to_vec();
-                    new_clr[item] = "red";
-                    set_color.set(new_clr);
-
-                    if current.get() == (-1isize, -1isize) {
-                        set_current.set((index as isize, item as isize));
-                    } else {
-                        if current.get().1 != item as isize {
-                            let mut new_order = order.get().to_vec();
-                            new_order.swap(current.get().0 as usize, index);
-                            set_order.set(new_order);
-                        }
-
-                        set_current.set((-1isize, -1isize));
-                    }}>{format!("{}:Item {} {} {}", index, item, current.get().1 != item as isize, color.get()[item])}</div>
+                <button class="sliding-list__item"
+                // style=format!("background-color: {}", color.get()[item])
+                on:click=move |_| clicky_click(index, item)
+                    >{format!("{}:Item {} {}", index, item, current.get().1 != item as isize)}</button>
 
             }
             ).collect::<Vec<_>>()
         }
-        {format!("Current: {} {}, {}", current.get().0, current.get().1, current.get() == (-1isize, -1isize))}
+        {move || format!("Current: {} {}, {}", current.get().0, current.get().1, current.get() == (-1isize, -1isize))}
         </div>
     }
 }
