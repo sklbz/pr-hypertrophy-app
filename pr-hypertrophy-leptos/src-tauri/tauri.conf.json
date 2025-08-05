@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "identifier": "com.sklbz.pr-hypertrophy-leptos",
   "build": {
-    "beforeDevCommand": "",
+    "beforeDevCommand": "trunk serve --port 1420",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "trunk build --verbose ",
+    "beforeBuildCommand": "trunk build",
     "frontendDist": "../dist"
   },
   "app": {
