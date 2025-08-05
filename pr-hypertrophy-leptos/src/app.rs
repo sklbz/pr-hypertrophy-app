@@ -17,6 +17,7 @@ struct GreetArgs<'a> {
 #[component]
 pub fn SlidingList() -> impl IntoView {
     let (order, set_order) = signal(vec![0, 1, 2, 3]);
+    let (color, set_color) = signal(vec!["black", "black", "black", "black"]);
     let (current, set_current) = signal((-1isize, -1isize));
 
     view! {
@@ -26,18 +27,23 @@ pub fn SlidingList() -> impl IntoView {
 
             view! {
                 <div class="sliding-list__item"
+                style=format!("background-color: {}", color.get()[item])
                 on:click=move |_| {
-                    println!("{} {}", index, item);
+                    let mut new_clr = color.get().to_vec();
+                    new_clr[item] = "red";
+                    set_color.set(new_clr);
+
                     if current.get() == (-1isize, -1isize) {
                         set_current.set((index as isize, item as isize));
                     } else {
                         if current.get().1 != item as isize {
                             let mut new_order = order.get().to_vec();
                             new_order.swap(current.get().0 as usize, index);
+                            set_order.set(new_order);
                         }
 
                         set_current.set((-1isize, -1isize));
-                    }}>{format!("{}:Item {} {}", index, item, current.get().1 != item as isize)}</div>
+                    }}>{format!("{}:Item {} {} {}", index, item, current.get().1 != item as isize, color.get()[item])}</div>
 
             }
             ).collect::<Vec<_>>()
