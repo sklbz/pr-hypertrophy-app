@@ -4,16 +4,16 @@
   "version": "0.1.0",
   "identifier": "com.sklbz.pr-hypertrophy-leptos",
   "build": {
-    "beforeDevCommand": "trunk serve",
+    "beforeDevCommand": "",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "trunk build",
+    "beforeBuildCommand": "trunk build --verbose ",
     "frontendDist": "../dist"
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "pr-hypertrophy-leptos",
+        "title": "PR Hypertrophy App",
         "width": 800,
         "height": 600
       }
