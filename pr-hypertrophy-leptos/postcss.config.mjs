@@ -5,5 +5,6 @@ export default {
 		"postcss-simple-vars": {},
 		"postcss-nested": {},
 		"postcss-preset-env": {},
+		"cssnano": {},
 	}
 }
