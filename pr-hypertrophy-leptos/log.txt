@@ -1,0 +1,69 @@
+2025-08-08T10:07:53.018888Z  INFO 🚀 Starting trunk 0.21.14
+2025-08-08T10:07:53.276957Z  INFO 📦 starting build
+2025-08-08T10:07:54.179543Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:54.179677Z  INFO 📡 serving static assets at -> /
+2025-08-08T10:07:54.179816Z  INFO 📡 server listening at:
+2025-08-08T10:07:54.179823Z  INFO     🏠 http://127.0.0.1:1420/
+2025-08-08T10:07:54.179827Z  INFO     🏠 http://[::1]:1420/
+2025-08-08T10:07:54.179958Z  INFO     🏠 http://localhost.:1420/
+2025-08-08T10:07:54.179973Z  INFO     🏠 http://ip6-localhost.:1420/
+2025-08-08T10:07:54.179975Z  INFO     🏠 http://ip6-loopback.:1420/
+2025-08-08T10:07:54.573623Z  INFO 📦 starting build
+2025-08-08T10:07:55.458648Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:55.458738Z  INFO 📦 starting build
+2025-08-08T10:07:56.292261Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:56.292668Z  INFO 📦 starting build
+2025-08-08T10:07:57.182871Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:57.183000Z  INFO 📦 starting build
+2025-08-08T10:07:58.030089Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:58.030174Z  INFO 📦 starting build
+2025-08-08T10:07:58.899880Z ERROR ❌ error
+error from build pipeline
+
+Caused by:
+    0: HTML build pipeline failed (1 errors), showing first
+    1: error from asset pipeline
+    2: running cargo build
+    3: error during cargo build execution
+    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/sklbz/code/pr-hypertrophy-app/pr-hypertrophy-leptos/Cargo.toml"]' returned a bad status: exit status: 101
+2025-08-08T10:07:58.899958Z  INFO 📦 starting build

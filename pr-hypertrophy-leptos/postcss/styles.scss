@@ -116,6 +116,17 @@ button {
 	align-items: center;
 }
 
+.sliding-list__item-bg{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+	width: 500px;
+	border-radius: 5px;
+	background-color: $dark-gray;
+	margin: 5px;
+}
+
 .sliding-list__item{
 	display: flex;
 	align-items: center;

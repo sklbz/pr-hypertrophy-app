@@ -44,13 +44,14 @@ pub fn SlidingList() -> impl IntoView {
             move || order.get().into_iter().enumerate().map(|(index,item)|
 
             view! {
-                <div class="sliding-list__item"
-                // style=format!("background-color: {}", color.get()[item])
-                on:click=move |_| clicky_click(index, item)
-                    >
-                    {format!("Item {}", item)}
+                <div class="sliding-list__item-bg">
+                    <div class="sliding-list__item"
+                    // style=format!("background-color: {}", color.get()[item])
+                    on:click=move |_| clicky_click(index, item)
+                        >
+                        {format!("Item {}", item)}
+                    </div>
                 </div>
-
             }
             ).collect::<Vec<_>>()
         }
