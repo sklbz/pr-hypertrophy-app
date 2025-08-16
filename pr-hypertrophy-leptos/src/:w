@@ -40,10 +40,10 @@ pub fn SlidingList() -> impl IntoView {
 
     let update_class = move |index: usize, item: usize| {
         if current.get() == (index as isize, item as isize) {
-            return "sliding-list__item--current";
+            "sliding-list__item--current"
+        } else {
+            ""
         }
-
-        ""
     };
 
     view! {
@@ -58,7 +58,7 @@ pub fn SlidingList() -> impl IntoView {
                     // style=format!("background-color: {}", color.get()[item])
                     on:click=move |_| clicky_click(index, item)
                         >
-                        {format!("Item {} Class: {}", item, move || update_class(index, item))}
+                        {format!("Item {}", item)}
                     </div>
                 </div>
             }
